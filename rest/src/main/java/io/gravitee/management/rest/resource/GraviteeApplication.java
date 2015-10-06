@@ -19,6 +19,7 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 
+import io.gravitee.management.rest.api.console.ConsoleWebResourceConfig;
 import io.gravitee.management.rest.mapper.ObjectMapperResolver;
 import io.gravitee.management.rest.provider.CorsResponseFilter;
 import io.gravitee.management.rest.provider.ManagementExceptionMapper;
@@ -46,6 +47,8 @@ public class GraviteeApplication extends ResourceConfig {
         register(CorsResponseFilter.class);
 
         register(JacksonFeature.class);
+
+        register(ConsoleWebResourceConfig.class);
 
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
     }

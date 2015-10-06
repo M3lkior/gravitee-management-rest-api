@@ -1,0 +1,88 @@
+#%RAML 0.8
+title: Gravitee IO Rest API
+version: v1
+baseUri: http://gravity1.gravitee.io/rest/
+
+/apis:
+  get:
+    description:
+      List all APIs
+/policies:
+  get: 
+    description: 
+      Retrieve the list of policies
+  /{policyname}:
+    get:
+      description: 
+        Retrieve informations for the specified policy
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include policy.sample
+    /schema:
+      get:
+        description:
+          Retrieve JSON Schema to configure the specified policy
+/teams:
+  get:
+    description: 
+      Retrieve the list of teams
+  /{teamname}:
+    get:
+      description: 
+        Retrieve information about the team
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include team.sample
+    /apis:
+      get:
+        description: 
+          List apis that are accessible to the team
+        responses:
+          200:
+            body:
+              application/json:
+                example: 
+                  !include apis_list.sample
+      post:
+        description:
+          Create a new API to the team
+      /{apiname}:
+        get:
+          description: 
+            Retrieve informations for the specified API
+          responses:
+            200:
+              body:
+                application/json:
+                  example:
+                    !include api.sample
+        post:
+          description:
+            Update the state of the API
+          queryParameters:
+            action: 
+              enum: [start, stop]
+              required: true
+              
+/users:
+  get:
+    description: 
+      Lists all users
+  /{username}:
+    get:
+      description:
+        Get a single user
+    /teams:
+      get:
+        description:
+          List teams for the specified user
+/user:
+  get:
+    description:
+      Get the authenticated user

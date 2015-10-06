@@ -1,0 +1,9 @@
+{
+  name: "weather-api",
+  description: "Weather API provided by OpenWeatherMap",
+  version: "v1",
+  public: "http://gravitee1.gravitee.io/weather",
+  target: "http://api.openweathermap.org/data/2.5/",
+  created_at: "2015-07-09T19:01:12Z",
+  updated_at: "2015-07-09T19:14:43Z"
+}

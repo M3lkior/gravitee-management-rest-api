@@ -117,6 +117,13 @@
 			<version>${jackson.version}</version>
 		</dependency>
 
+		<!-- Console dependencies -->
+		<dependency>
+			<groupId>io.gravitee.management</groupId>
+			<artifactId>gravitee-management-api-console</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 		<!-- Unit testing -->
 		<dependency>
 			<groupId>org.mockito</groupId>

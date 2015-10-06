@@ -1,0 +1,5 @@
+{
+  name: "rate-limit",
+  description: "Rate Limiting Policy",
+  version: "1.0.0-SNAPSHOT"
+}
